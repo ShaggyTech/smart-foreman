@@ -1,5 +1,7 @@
 {
   "extends": [
-    "config:base"
-  ]
+    "@nuxtjs"
+  ],
+  "baseBranches": ["staging"],
+  "labels": ["dependencies"]
 }
