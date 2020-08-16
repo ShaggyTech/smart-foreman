@@ -1,15 +1,30 @@
 {
   "name": "smart-foreman",
-  "version": "1.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "private": false,
+  "author": "Brandon Eichler <github.com/shaggytech>",
+  "license": "MIT",
+  "description": "Vue/Nuxt Progressive Web App (PWA) for smarter management of your repair shop. Smart Foreman will help build trust with your customers and improve overall shop efficiency.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShaggyTech/smart-foreman.git",
+    "homepage": "https://github.com/ShaggyTech/smart-foreman"
+  },
+  "bugs": {
+    "url": "https://github.com/ShaggyTech/smart-foreman/issues"
+  },
+  "homepage": "https://www.snartforeman.com",
   "scripts": {
-    "dev": "nuxt-ts",
+    "dev": "ts-node --project server/tsconfig.json server/server-dev.ts",
     "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
+    "start": "cross-env NODE_ENV=production ts-node --project 'server/tsconfig.json' server/server-prod.ts",
     "generate": "nuxt-ts generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "yarn lint:js",
-    "test": "jest"
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "test": "jest -c ./test/config/jest.config.js",
+    "test:watch": "jest -c ./test/config/jest.config.js --watch --onlyChanged",
+    "test:watchAll": "jest -c ./test/config/jest.config.js --watchAll",
+    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt-ts build",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt-ts generate"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
