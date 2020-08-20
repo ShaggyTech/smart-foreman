@@ -1,9 +1,15 @@
-export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
+import { NuxtConfig } from '@nuxt/types'
+
+const name = process.env.npm_package_name || ''
+const isDev = process.env.NODE_ENV !== 'production'
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES' ? { router: { base: `/${name}/` } } : {}
+
+const config: NuxtConfig = {
+  dev: isDev,
+  telemetry: false,
   mode: 'universal',
+  ...routerBase,
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -34,7 +40,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['~/plugins/composition-api.ts'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -43,7 +49,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: ['@nuxt/typescript-build', 'nuxt-typed-vuex'],
   /*
    ** Nuxt.js modules
    */
@@ -52,5 +58,21 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    transpile: ['/typed-vuex/'],
+    /*
+     ** You can extend webpack config here
+     */
+    // extend(config, ctx) {}
+  },
+  // Runtime type checking when running nuxt build
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,vue}',
+      },
+    },
+  },
 }
+
+export default config
