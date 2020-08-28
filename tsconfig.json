@@ -5,7 +5,7 @@
     "lib": [
       "ESNext",
       "ESNext.AsyncIterable",
-      "DOM"
+      "DOM",
     ],
     "esModuleInterop": true,
     "allowJs": true,
@@ -14,12 +14,13 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
     },
     "types": [
-      "@types/node",
       "@nuxt/types",
-      "@types/jest"
+      "@nuxtjs/vuetify",
+      "@types/jest",
+      "@types/node",
     ],
     /* Strict Type-Checking Options */
     "strict": true,
@@ -50,11 +51,11 @@
     "suppressImplicitAnyIndexErrors": true,
     "pretty": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
   },
   "exclude": [
     "node_modules",
     ".nuxt",
-    "dist"
+    "dist",
   ]
 }

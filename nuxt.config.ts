@@ -45,11 +45,27 @@ const config: NuxtConfig = {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      {
+        path: '~/components/layout/',
+        prefix: 'Layout',
+      },
+      {
+        path: '~/components/form/',
+        prefix: 'Form',
+      },
+    ],
+  },
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxt/typescript-build', 'nuxt-typed-vuex'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/vuetify',
+    'nuxt-typed-vuex',
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -59,7 +75,7 @@ const config: NuxtConfig = {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    transpile: ['/typed-vuex/'],
+    transpile: ['/typed-vuex/', 'vuetify/lib/util/colors'],
     /*
      ** You can extend webpack config here
      */
@@ -72,6 +88,13 @@ const config: NuxtConfig = {
         files: './**/*.{ts,js,vue}',
       },
     },
+  },
+  /*
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
+  vuetify: {
+    optionsPath: '~/plugins/vuetify.ts',
   },
 }
 
