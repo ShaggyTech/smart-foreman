@@ -1,7 +1,29 @@
+<script lang="ts">
+import { defineComponent, onErrorCaptured } from '@vue/composition-api'
+
+export default defineComponent({
+  setup() {
+    /* istanbul ignore next */
+    onErrorCaptured((err: Error, _vm: object, info: string): boolean => {
+      // eslint-disable-next-line no-console
+      console.error('Oops! An error occurred: ' + err.toString())
+      // eslint-disable-next-line no-console
+      console.error('info: ' + info)
+      return false
+    })
+  },
+})
+</script>
+
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <v-app>
+    <LayoutHeader />
+    <v-main>
+      <v-container fluid>
+        <Nuxt />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <style>
