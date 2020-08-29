@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        smart-foreman
-      </h1>
+      <h1 class="title">Smart Foreman - Shop Management</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"

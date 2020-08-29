@@ -8,13 +8,13 @@ export default defineComponent({
 
 <template>
   <v-app-bar app hide-on-scroll>
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon />
 
-    <v-spacer></v-spacer>
+    <v-spacer />
 
     <v-toolbar-title>Smart Foreman - Shop Mananagement</v-toolbar-title>
 
-    <v-spacer></v-spacer>
+    <v-spacer />
 
     <v-btn text nuxt to="/register">
       <v-icon left> mdi-account-plus </v-icon>Register
