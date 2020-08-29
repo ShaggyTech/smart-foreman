@@ -13,9 +13,11 @@ export default defineComponent({
   setup(_, { emit }) {
     const email: Ref<string | null> = ref(null)
     const password: Ref<string | null> = ref(null)
+    const passwordConfirm: Ref<string | null> = ref(null)
     const form = {
       email,
       password,
+      passwordConfirm,
     }
 
     const submit = () => emit('submit', form)
@@ -27,6 +29,7 @@ export default defineComponent({
     return {
       email,
       password,
+      passwordConfirm,
       submit,
       clear,
     }
@@ -37,7 +40,9 @@ export default defineComponent({
 <template>
   <v-card :max-width="maxWidth">
     <v-card-title>
-      <p class="mx-auto px-2 headline text-h4 text-md-h2 text-center">Login</p>
+      <p class="mx-auto px-2 headline text-h4 text-md-h2 text-center">
+        Register
+      </p>
     </v-card-title>
     <v-card-text>
       <v-form>
@@ -48,10 +53,16 @@ export default defineComponent({
           required
           type="password"
         />
+        <v-text-field
+          v-model="passwordConfirm"
+          label="Confirm Password"
+          required
+          type="password"
+        />
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <v-btn color="success" class="mr-4" @click="submit"> Login </v-btn>
+      <v-btn color="success" class="mr-4" @click="submit"> Register </v-btn>
       <v-btn @click="clear"> Clear </v-btn>
     </v-card-actions>
   </v-card>

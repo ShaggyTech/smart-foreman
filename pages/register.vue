@@ -2,20 +2,20 @@
 import { defineComponent, Ref } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'PageLogin',
+  name: 'PageRegister',
   setup() {
-    const login = (form: Record<string, Ref>): void =>
+    const register = (form: Record<string, Ref>): void =>
       console.log(
         `Email: ${form.email.value}, Password: ${form.password.value}`
       )
 
-    return { login }
+    return { register }
   },
 })
 </script>
 
 <template>
   <v-container>
-    <FormLogin class="mx-auto pa-6" max-width="400px" @submit="login" />
+    <FormRegister class="mx-auto pa-6" max-width="400px" @submit="register" />
   </v-container>
 </template>
