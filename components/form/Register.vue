@@ -4,6 +4,11 @@ import { defineComponent, ref, Ref, PropType } from '@vue/composition-api'
 export default defineComponent({
   name: 'FormLogin',
   props: {
+    minWidth: {
+      required: false,
+      type: String as PropType<string>,
+      default: '',
+    },
     maxWidth: {
       required: false,
       type: String as PropType<string>,
@@ -20,10 +25,11 @@ export default defineComponent({
       passwordConfirm,
     }
 
-    const submit = () => emit('submit', form)
-    const clear = () => {
+    const submit = (): void => emit('submit', form)
+    const clear = (): void => {
       email.value = null
       password.value = null
+      passwordConfirm.value = null
     }
 
     return {
@@ -38,7 +44,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-card :max-width="maxWidth">
+  <v-card :min-width="minWidth" :max-width="maxWidth">
     <v-card-title>
       <p class="mx-auto px-2 headline text-h4 text-md-h2 text-center">
         Register

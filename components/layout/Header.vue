@@ -12,7 +12,11 @@ export default defineComponent({
 
     <v-spacer />
 
-    <v-toolbar-title>Smart Foreman - Shop Mananagement</v-toolbar-title>
+    <v-toolbar-title>
+      <v-btn to="/" nuxt exact tile block depressed x-large>
+        Smart Foreman
+      </v-btn>
+    </v-toolbar-title>
 
     <v-spacer />
 

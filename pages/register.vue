@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-container>
-    <FormRegister class="mx-auto pa-6" max-width="400px" @submit="register" />
+  <v-container fluid>
+    <FormRegister class="pa-2" @submit="register" />
   </v-container>
 </template>

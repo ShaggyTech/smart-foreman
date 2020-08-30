@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-container>
-    <FormLogin class="mx-auto pa-6" max-width="400px" @submit="login" />
+  <v-container fluid>
+    <FormLogin class="mx-auto pa-2" @submit="login" />
   </v-container>
 </template>
