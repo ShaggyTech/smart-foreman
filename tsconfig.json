@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "ESNext",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM",
-    ],
+    "target": "es2018",
+    "module": "esnext",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
@@ -14,14 +10,10 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"],
+      "@/*": ["./*"]
     },
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/vuetify",
-      "@types/jest",
-      "@types/node",
-    ],
+    "types": ["@types/node", "@types/jest", "@nuxt/types", "@nuxt/vue-app", "@nuxtjs/vuetify"],
+
     /* Strict Type-Checking Options */
     "strict": true,
     "noImplicitAny": true,
@@ -51,11 +43,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "pretty": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist",
-  ]
+  "exclude": ["node_modules"]
 }

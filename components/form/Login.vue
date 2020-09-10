@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref, Ref, PropType } from '@vue/composition-api'
+import { defineComponent, ref, Ref, PropType } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'FormLogin',
@@ -16,27 +16,27 @@ export default defineComponent({
     },
   },
   setup(_, { emit }) {
-    const email: Ref<string | null> = ref(null)
-    const password: Ref<string | null> = ref(null)
+    const email: Ref<string | null> = ref(null);
+    const password: Ref<string | null> = ref(null);
     const form: Record<string, Ref<string | null>> = {
       email,
       password,
-    }
+    };
 
-    const submit = (): void => emit('submit', form)
+    const submit = (): void => emit('submit', form);
     const clear = (): void => {
-      email.value = null
-      password.value = null
-    }
+      email.value = null;
+      password.value = null;
+    };
 
     return {
       email,
       password,
       submit,
       clear,
-    }
+    };
   },
-})
+});
 </script>
 
 <template>

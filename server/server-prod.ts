@@ -1,14 +1,14 @@
-import consola from 'consola'
-import { NuxtServer } from '.'
+import consola from 'consola';
+import { NuxtServer } from '.';
 
 const startProduction = () => {
-  const server = new NuxtServer()
+  const server = new NuxtServer();
 
   consola.start({
     message: `Starting production server on http://${server.host}:${server.port}`,
     badge: true,
-  })
-  server.start()
-}
+  });
+  server.start();
+};
 
-export default startProduction()
+export default startProduction();

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, Ref } from '@vue/composition-api'
+import { defineComponent, Ref } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'PageLogin',
@@ -7,11 +7,11 @@ export default defineComponent({
     const login = (form: Record<string, Ref>): void =>
       console.log(
         `Email: ${form.email.value}, Password: ${form.password.value}`
-      )
+      );
 
-    return { login }
+    return { login };
   },
-})
+});
 </script>
 
 <template>

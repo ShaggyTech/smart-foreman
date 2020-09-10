@@ -1,7 +1,7 @@
-import { TypedVuexStore } from '@/store'
+import { TypedVuexStore } from '~/store';
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $accessor: TypedVuexStore
+    $accessor: TypedVuexStore;
   }
 }

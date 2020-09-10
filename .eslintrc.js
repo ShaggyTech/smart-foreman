@@ -5,13 +5,13 @@ module.exports = {
     node: true,
   },
   extends: [
+    'eslint:recommended',
     '@nuxtjs',
-    'prettier',
     '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended',
-    'plugin:vue/vue3-strongly-recommended',
+    'prettier',
     'prettier/vue',
     'plugin:prettier/recommended',
+    'plugin:nuxt/recommended',
   ],
   plugins: ['prettier', 'vue'],
   // add your custom rules here
@@ -35,4 +35,4 @@ module.exports = {
      ****************/
     'nuxt/no-cjs-in-config': 0,
   },
-}
+};

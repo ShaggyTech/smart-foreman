@@ -1,18 +1,18 @@
 <script lang="ts">
-import { defineComponent, onErrorCaptured } from '@vue/composition-api'
+import { defineComponent, onErrorCaptured } from '@vue/composition-api';
 
 export default defineComponent({
   setup() {
     /* istanbul ignore next */
     onErrorCaptured((err: Error, _vm: object, info: string): boolean => {
       // eslint-disable-next-line no-console
-      console.error('Oops! An error occurred: ' + err.toString())
+      console.error('Oops! An error occurred: ' + err.toString());
       // eslint-disable-next-line no-console
-      console.error('info: ' + info)
-      return false
-    })
+      console.error('info: ' + info);
+      return false;
+    });
   },
-})
+});
 </script>
 
 <template>

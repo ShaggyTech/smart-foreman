@@ -1,20 +1,21 @@
-import { NuxtConfig } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types';
 
-const name = process.env.npm_package_name || ''
-const isDev = process.env.NODE_ENV !== 'production'
+const name = process.env.npm_package_name || '';
+const isDev = process.env.NODE_ENV !== 'production';
 const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES' ? { router: { base: `/${name}/` } } : {}
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? { router: { base: `/${name}/` } }
+    : {};
 
 const config: NuxtConfig = {
-  dev: isDev,
-  telemetry: false,
   mode: 'universal',
-  ...routerBase,
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
   target: 'server',
+  telemetry: false,
+  dev: isDev,
+  ...routerBase,
+  // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
+  publicRuntimeConfig: {},
+  privateRuntimeConfig: {},
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -32,15 +33,8 @@ const config: NuxtConfig = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  /*
-   ** Global CSS
-   */
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   ** https://nuxtjs.org/guide/plugins
-   */
-  plugins: ['~/plugins/composition-api.ts'],
+  plugins: ['~/plugins/composition-api.ts', '~/plugins/vee-validate.ts'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -63,19 +57,24 @@ const config: NuxtConfig = {
    */
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
     'nuxt-typed-vuex',
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    transpile: ['/typed-vuex/', 'vuetify/lib/util/colors'],
+    transpile: [
+      '/typed-vuex/',
+      'vee-validate/dist/rules',
+      'vuetify/lib/util/colors',
+    ],
     /*
      ** You can extend webpack config here
      */
@@ -96,6 +95,6 @@ const config: NuxtConfig = {
   vuetify: {
     optionsPath: '~/plugins/vuetify.ts',
   },
-}
+};
 
-export default config
+export default config;
