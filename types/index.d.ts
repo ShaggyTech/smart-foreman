@@ -1,11 +1,7 @@
 import { ActionTypes } from '@shaggytools/nhtsa-api-wrapper';
-import { TypedVuexStore } from '~/store';
+import { TypedVuexStore as _TypedVuexStore } from '~/store';
 
-declare module '@nuxt/types' {
-  interface NuxtAppOptions {
-    $accessor: TypedVuexStore;
-  }
-}
+export type TypedVuexStore = _TypedVuexStore;
 
 export type ResultsObjectType = { [propName: string]: any };
 
