@@ -1,6 +1,6 @@
 import { NuxtConfig } from '@nuxt/types';
 
-const name = process.env.npm_package_name || '';
+const name = 'Smart Foreman';
 const isDev = process.env.NODE_ENV !== 'production';
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
@@ -43,12 +43,24 @@ const config: NuxtConfig = {
     dirs: [
       '~/components',
       {
+        path: '~/components/app/',
+        prefix: 'App',
+      },
+      {
+        path: '~/components/base/',
+        prefix: 'Base',
+      },
+      {
         path: '~/components/layout/',
         prefix: 'Layout',
       },
       {
         path: '~/components/form/',
         prefix: 'Form',
+      },
+      {
+        path: '~/components/VinDecoder/',
+        prefix: 'VinDecoder',
       },
     ],
   },

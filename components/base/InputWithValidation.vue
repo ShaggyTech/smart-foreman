@@ -10,7 +10,7 @@ import {
 /* Vee-Validate */
 import { ValidationProvider } from 'vee-validate';
 /* Types */
-import { Validator } from '@/types';
+import { Validator } from '~/types';
 
 export default defineComponent({
   name: 'BaseInputWithValidation',
