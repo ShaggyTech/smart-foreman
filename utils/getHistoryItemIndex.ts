@@ -2,7 +2,7 @@
 import { HistoryItem } from '@/store/history';
 
 /* Returns the index if the given history item exists, or -1 if it does not exist */
-export const getHistoryItemIndex = (
+const getHistoryItemIndex = (
   vinValue: string,
   history: HistoryItem[]
 ): number => {
@@ -11,3 +11,5 @@ export const getHistoryItemIndex = (
   };
   return history.findIndex(isExistingItem);
 };
+
+export { getHistoryItemIndex };
