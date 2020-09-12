@@ -1,6 +1,9 @@
-import { mockRawResults } from '@/test/__mocks__/mockDecodeVinValuesExtendedResults';
-import { fetchDecodeVinResults } from '@/utils/fetchDecodeVinResults';
-import { DecodeVinValuesExtendedResults } from '@/types';
+/* Utility */
+import { fetchDecodeVinResults } from '~/utils/fetchDecodeVinResults';
+/* Mock API Data */
+import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
+/* Types */
+import { DecodeVinValuesExtendedResults } from '~/types';
 
 describe('fetchDecodeVinResults Utility Method', () => {
   let results: DecodeVinValuesExtendedResults;

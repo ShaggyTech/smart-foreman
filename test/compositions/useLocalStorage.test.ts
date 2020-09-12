@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils';
-import { syncHistoryOnMounted } from '@/compositions/useLocalStorage';
+/* Composition */
+import { syncHistoryOnMounted } from '~/compositions/useLocalStorage';
 /* Mocks */
-import { mockRawResults } from '@/test/__mocks__/mockDecodeVinValuesExtendedResults';
+import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { DecodeVinValuesExtendedResults } from '@/types';
-import { TypedVuexStore } from '@/store';
-import { HistoryItem } from '@/store/history';
+import { DecodeVinValuesExtendedResults, TypedVuexStore } from '~/types';
+import { HistoryItem } from '~/store/history';
 
 const MOCK_ITEM: HistoryItem = {
   VIN: 'TESTVIN',

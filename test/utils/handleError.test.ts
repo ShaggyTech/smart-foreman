@@ -1,4 +1,4 @@
-import { handleError } from '@/utils/handleError';
+import { handleError } from '~/utils/handleError';
 
 const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 

@@ -1,21 +1,24 @@
 import { isRef } from '@vue/composition-api';
+/* Component Setup Functions */
 import {
   Refs,
   VALIDATOR,
   setupRefs,
   initializeComponent,
-} from '@/components/VinDecoder/setup';
+} from '~/components/VinDecoder';
+/* Mock API Data */
+import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { TypedVuexStore } from '@/store';
-import { mockRawResults } from '@/test/__mocks__/mockDecodeVinValuesExtendedResults';
+import { TypedVuexStore } from '~/store';
+import { HistoryItem } from '~/store/history';
 
-jest.mock('@/utils/handleError', () => {
+jest.mock('~/utils/handleError', () => {
   return {
     handleError: jest.fn(),
   };
 });
 
-const useMockStore = (history: Array<any>): unknown => {
+const useMockStore = (history: HistoryItem[]): unknown => {
   // eslint-disable-next-line prefer-const
   let history_ = history;
   return {

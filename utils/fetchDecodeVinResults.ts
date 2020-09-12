@@ -1,4 +1,4 @@
-import { DecodeVinValuesExtendedResults } from '@/types';
+import { DecodeVinValuesExtendedResults } from '~/types';
 
 /**
  * @description Returns response from NHTSA API endpoint DecodeVinValuesExtended

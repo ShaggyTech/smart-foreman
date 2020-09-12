@@ -1,4 +1,5 @@
-import { filterResults } from '@/utils/filterResults';
+/* Utility */
+import { filterResults } from '~/utils/filterResults';
 
 const validResults = {
   Make: 'VW',

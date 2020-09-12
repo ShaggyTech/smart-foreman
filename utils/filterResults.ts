@@ -1,4 +1,4 @@
-import { ResultsObjectType } from '@/types';
+import { ResultsObjectType } from '~/types';
 
 /**
  * @description Filters results by removing any item with a falsey value or a value equal to 'Not Applicable'

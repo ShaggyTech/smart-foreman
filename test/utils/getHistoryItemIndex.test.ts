@@ -1,8 +1,9 @@
-import { getHistoryItemIndex } from '@/utils/getHistoryItemIndex';
-/* Mocks */
-import { mockRawResults } from '@/test/__mocks__/mockDecodeVinValuesExtendedResults';
+/* Utility */
+import { getHistoryItemIndex } from '~/utils/getHistoryItemIndex';
+/* Mock API Data */
+import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { DecodeVinValuesExtendedResults } from '@/types';
+import { DecodeVinValuesExtendedResults } from '~/types';
 import { HistoryItem } from '~/store/history';
 
 const MOCK_ITEM: HistoryItem = {
@@ -10,7 +11,7 @@ const MOCK_ITEM: HistoryItem = {
   results: mockRawResults as DecodeVinValuesExtendedResults,
 };
 describe('getHistoryItemIndex helper function', () => {
-  const mockHistory = [MOCK_ITEM];
+  const mockHistory: HistoryItem[] = [MOCK_ITEM];
 
   test('is correctly exported as a function', () => {
     expect(getHistoryItemIndex).toBeDefined();

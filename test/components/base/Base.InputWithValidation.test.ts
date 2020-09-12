@@ -2,8 +2,8 @@ import flushPromises from 'flush-promises';
 
 import { mount } from '@vue/test-utils';
 
-import BaseInputWithValidation from '@/components/base/BaseInputWithValidation.vue';
-import { Validator } from '@/types';
+import BaseInputWithValidation from '~/components/base/InputWithValidation.vue';
+import { Validator } from '~/types';
 
 const factory = (options: object) => {
   return mount(BaseInputWithValidation, {

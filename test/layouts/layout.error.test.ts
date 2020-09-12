@@ -1,7 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils';
 import Vuetify from 'vuetify';
-import errorLayout from '@/layouts/error.vue';
-import vuetifyConfig from '@/plugins/vuetify';
+import errorLayout from '~/layouts/error.vue';
+import vuetifyConfig from '~/plugins/vuetify';
 
 const localVue = createLocalVue();
 

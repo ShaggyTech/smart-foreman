@@ -1,15 +1,15 @@
 import { mount, createLocalVue } from '@vue/test-utils';
 import Vuetify from 'vuetify';
-import defaultLayout from '@/layouts/default.vue';
-import vuetifyConfig from '@/plugins/vuetify';
+import defaultLayout from '~/layouts/default.vue';
+import vuetifyConfig from '~/plugins/vuetify';
 
 const localVue = createLocalVue();
 
-jest.mock('@/compositions/useLocalStorage', () => ({
+jest.mock('~/compositions/useLocalStorage', () => ({
   syncHistoryOnMounted: () => jest.fn(),
 }));
 
-jest.mock('@/compositions/useRootStore', () =>
+jest.mock('~/compositions/useRootStore', () =>
   jest.requireActual('@/compositions/useRootStore')
 );
 

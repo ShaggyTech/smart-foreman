@@ -2,13 +2,12 @@ import { isRef } from '@vue/composition-api';
 import {
   mapHistoryState,
   mapHistoryActions,
-} from '@/compositions/useHistoryStore';
-/* Mocks */
-import { mockRawResults } from '@/test/__mocks__/mockDecodeVinValuesExtendedResults';
+} from '~/compositions/useHistoryStore';
+/* Mock Data */
+import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { HistoryItem } from '@/store/history';
-import { TypedVuexStore } from '@/store';
-import { DecodeVinValuesExtendedResults } from '@/types';
+import { HistoryItem } from '~/store/history';
+import { DecodeVinValuesExtendedResults, TypedVuexStore } from '~/types';
 
 const MOCK_ITEM: HistoryItem = {
   VIN: 'TESTVIN',

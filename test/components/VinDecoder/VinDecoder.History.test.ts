@@ -1,13 +1,16 @@
 import { mount } from '@vue/test-utils';
-import VinHistory from '@/components/VinDecoder/VinHistory/VinHistory.vue';
+/* Component */
+import VinDecoderHistory from '~/components/VinDecoder/History.vue';
+/* Types */
+import { HistoryItem } from '~/store/history';
 
 const factory = (options: object) => {
-  return mount(VinHistory, {
+  return mount(VinDecoderHistory, {
     ...options,
   });
 };
 
-const getMocks = (history: Array<any> = []) => {
+const getMocks = (history: HistoryItem[] = []) => {
   return {
     $accessor: {
       history: {
@@ -22,7 +25,7 @@ const getMocks = (history: Array<any> = []) => {
 
 const mockHistory = [{ VIN: 'TESTVIN', results: { Make: 'VW' } }];
 
-describe('VinHistory Component Tests', () => {
+describe('VinDecoderHistory Component Tests', () => {
   test('component is invisible if history is empty', () => {
     const wrapper = factory({
       sync: false,
@@ -36,7 +39,7 @@ describe('VinHistory Component Tests', () => {
   test('component is visible if history contains items', () => {
     const wrapper = factory({
       sync: false,
-      mocks: { ...getMocks(mockHistory) },
+      mocks: { ...getMocks(mockHistory as HistoryItem[]) },
     });
 
     expect(wrapper.find('.history-card').exists()).toBe(true);
@@ -46,7 +49,7 @@ describe('VinHistory Component Tests', () => {
   test('history can be cleared and component is invisible after clearing', async () => {
     const wrapper = factory({
       sync: false,
-      mocks: { ...getMocks(mockHistory) },
+      mocks: { ...getMocks(mockHistory as HistoryItem[]) },
     });
 
     // history exists
