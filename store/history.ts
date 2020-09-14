@@ -1,16 +1,11 @@
 /* Types */
 import { mutationTree, actionTree } from 'nuxt-typed-vuex';
-import { DecodeVinValuesExtendedResults } from '@/types';
+import { DecodeVinValuesExtendedResults } from '~/types';
 
 export type HistoryItem = {
   VIN: string;
   results: DecodeVinValuesExtendedResults;
 };
-
-export interface HistoryPayload {
-  action: string;
-  item?: HistoryItem;
-}
 
 export const state = () => ({
   history: [] as HistoryItem[],
