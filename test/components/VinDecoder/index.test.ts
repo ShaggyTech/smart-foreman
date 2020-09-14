@@ -8,16 +8,16 @@ import {
 } from '~/components/VinDecoder';
 /* Mock API Data */
 import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
+/* Utility modules we want to mock via jest.spyon() */
+import * as moduleFetchDecodeVinResults from '~/utils/fetchDecodeVinResults';
+import * as moduleGetHistoryItemIndex from '~/utils/getHistoryItemIndex';
+import * as moduleHandleError from '~/utils/handleError';
 /* Types */
+import { DecodeVinValuesExtendedResults } from '~/types';
 import { TypedVuexStore } from '~/store';
 import { HistoryItem } from '~/store/history';
 
-jest.mock('~/utils/handleError', () => {
-  return {
-    handleError: jest.fn(),
-  };
-});
-
+/* Mock history vuex store module */
 const useMockStore = (history: HistoryItem[]): unknown => {
   // eslint-disable-next-line prefer-const
   let history_ = history;
@@ -132,6 +132,23 @@ describe('Module: Setup composition module for VinDecoder component', () => {
     });
 
     describe('getResults component method', () => {
+      const spyFetchDecodeVinResults = jest.spyOn(
+        moduleFetchDecodeVinResults,
+        'fetchDecodeVinResults'
+      );
+      const spyGetHistoryItemIndex = jest.spyOn(
+        moduleGetHistoryItemIndex,
+        'getHistoryItemIndex'
+      );
+
+      jest
+        .spyOn(moduleHandleError, 'handleError')
+        .mockImplementation(() => undefined);
+
+      beforeEach(() => {
+        jest.clearAllMocks();
+      });
+
       test('handles invalid or no vin argument', async () => {
         const { getResults, rawResults } = componentSetup([]);
         let results = await getResults(null);
@@ -150,6 +167,11 @@ describe('Module: Setup composition module for VinDecoder component', () => {
           loading,
           alertMessage,
         } = componentSetup([]);
+
+        spyGetHistoryItemIndex.mockImplementationOnce(() => -1);
+        spyFetchDecodeVinResults.mockImplementationOnce(() =>
+          Promise.resolve(mockRawResults as DecodeVinValuesExtendedResults)
+        );
 
         /* rawResults should be null to start */
         expect(rawResults.value).toEqual(null);
@@ -173,6 +195,13 @@ describe('Module: Setup composition module for VinDecoder component', () => {
           loading,
           alertMessage,
         } = componentSetup([]);
+
+        spyGetHistoryItemIndex.mockImplementationOnce(() => -1);
+        spyFetchDecodeVinResults.mockImplementationOnce(() =>
+          Promise.reject(
+            new Error('Sorry, no results were found or an error occurred')
+          )
+        );
 
         /* rawResults should be null to start */
         expect(rawResults.value).toEqual(null);
@@ -199,6 +228,13 @@ describe('Module: Setup composition module for VinDecoder component', () => {
           alertMessage,
         } = componentSetup([]);
 
+        spyFetchDecodeVinResults.mockImplementationOnce(() =>
+          Promise.reject(
+            new Error('Sorry, no results were found or an error occurred')
+          )
+        );
+        spyGetHistoryItemIndex.mockImplementationOnce(() => -1);
+
         /* rawResults should be null to start */
         expect(rawResults.value).toEqual(null);
         /* simulate an error via __mocks__/@shaggytools/nhtsa-api-wrapper */
@@ -224,9 +260,11 @@ describe('Module: Setup composition module for VinDecoder component', () => {
           alertMessage,
         } = componentSetup([mockItem]);
 
+        spyGetHistoryItemIndex.mockImplementationOnce(() => 0);
+
         /* rawResults should be null to start */
         expect(rawResults.value).toEqual(null);
-        /* simulate an error via __mocks__/@shaggytools/nhtsa-api-wrapper */
+        /* get mock results */
         const results = await getResults(mockItem.VIN);
         /* getResults should gracefully return existing */
         expect(results).toEqual(mockItem.results);
