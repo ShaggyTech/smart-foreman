@@ -3,8 +3,7 @@ import { getHistoryItemIndex } from '~/utils/getHistoryItemIndex';
 /* Mock API Data */
 import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { DecodeVinValuesExtendedResults } from '~/types';
-import { HistoryItem } from '~/store/history';
+import { DecodeVinValuesExtendedResults, HistoryItem } from '~/types';
 
 const MOCK_ITEM: HistoryItem = {
   VIN: 'TESTVIN',

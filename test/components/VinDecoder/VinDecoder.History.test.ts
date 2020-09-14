@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 /* Component */
 import VinDecoderHistory from '~/components/VinDecoder/History.vue';
 /* Types */
-import { HistoryItem } from '~/store/history';
+import { HistoryItem } from '~/types';
 
 const factory = (options: object) => {
   return mount(VinDecoderHistory, {
@@ -23,7 +23,9 @@ const getMocks = (history: HistoryItem[] = []) => {
   };
 };
 
-const mockHistory = [{ VIN: 'TESTVIN', results: { Make: 'VW' } }];
+const mockHistory = [
+  { VIN: 'TESTVIN', results: { Make: 'VW' } },
+] as HistoryItem[];
 
 describe('VinDecoderHistory Component Tests', () => {
   test('component is invisible if history is empty', () => {
@@ -39,7 +41,7 @@ describe('VinDecoderHistory Component Tests', () => {
   test('component is visible if history contains items', () => {
     const wrapper = factory({
       sync: false,
-      mocks: { ...getMocks(mockHistory as HistoryItem[]) },
+      mocks: { ...getMocks(mockHistory) },
     });
 
     expect(wrapper.find('.history-card').exists()).toBe(true);
@@ -49,7 +51,7 @@ describe('VinDecoderHistory Component Tests', () => {
   test('history can be cleared and component is invisible after clearing', async () => {
     const wrapper = factory({
       sync: false,
-      mocks: { ...getMocks(mockHistory as HistoryItem[]) },
+      mocks: { ...getMocks(mockHistory) },
     });
 
     // history exists

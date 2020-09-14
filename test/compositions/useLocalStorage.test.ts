@@ -4,8 +4,11 @@ import { syncHistoryOnMounted } from '~/compositions/useLocalStorage';
 /* Mocks */
 import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { DecodeVinValuesExtendedResults, TypedVuexStore } from '~/types';
-import { HistoryItem } from '~/store/history';
+import {
+  DecodeVinValuesExtendedResults,
+  HistoryItem,
+  TypedVuexStore,
+} from '~/types';
 
 const MOCK_ITEM: HistoryItem = {
   VIN: 'TESTVIN',

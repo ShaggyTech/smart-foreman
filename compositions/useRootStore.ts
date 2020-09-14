@@ -1,6 +1,6 @@
 import { computed } from '@vue/composition-api';
 /* Types */
-import { TypedVuexStore } from '@/store';
+import { TypedVuexStore } from '~/types';
 
 export const mapRootState = (store: TypedVuexStore) => ({
   drawerItems: computed(() => [...store.drawerItems]),

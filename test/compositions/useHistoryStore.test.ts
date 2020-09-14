@@ -6,8 +6,11 @@ import {
 /* Mock Data */
 import { mockRawResults } from '~/test/__mocks__/mockDecodeVinValuesExtendedResults';
 /* Types */
-import { HistoryItem } from '~/store/history';
-import { DecodeVinValuesExtendedResults, TypedVuexStore } from '~/types';
+import {
+  DecodeVinValuesExtendedResults,
+  TypedVuexStore,
+  HistoryItem,
+} from '~/types';
 
 const MOCK_ITEM: HistoryItem = {
   VIN: 'TESTVIN',

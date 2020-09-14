@@ -1,7 +1,6 @@
 import { ActionTypes } from '@shaggytools/nhtsa-api-wrapper';
-import { TypedVuexStore as _TypedVuexStore } from '~/store';
-
-export type TypedVuexStore = _TypedVuexStore;
+export { RootState, TypedVuexStore } from '~/store';
+export { HistoryItem, HistoryState } from '~/store/history';
 
 export type ResultsObjectType = { [propName: string]: any };
 

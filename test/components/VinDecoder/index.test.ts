@@ -13,9 +13,11 @@ import * as moduleFetchDecodeVinResults from '~/utils/fetchDecodeVinResults';
 import * as moduleGetHistoryItemIndex from '~/utils/getHistoryItemIndex';
 import * as moduleHandleError from '~/utils/handleError';
 /* Types */
-import { DecodeVinValuesExtendedResults } from '~/types';
-import { TypedVuexStore } from '~/store';
-import { HistoryItem } from '~/store/history';
+import {
+  DecodeVinValuesExtendedResults,
+  HistoryItem,
+  TypedVuexStore,
+} from '~/types';
 
 /* Mock history vuex store module */
 const useMockStore = (history: HistoryItem[]): unknown => {

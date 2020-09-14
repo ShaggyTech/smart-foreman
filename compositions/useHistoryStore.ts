@@ -1,8 +1,7 @@
 /* Composition API */
 import { computed } from '@vue/composition-api';
 /* Types */
-import { TypedVuexStore } from '@/store';
-import { HistoryItem } from '@/store/history';
+import { HistoryItem, TypedVuexStore } from '~/types';
 
 /* Component compition refs */
 export const mapHistoryState = (store: TypedVuexStore) => ({
