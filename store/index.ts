@@ -20,13 +20,23 @@ const getDefaultState = () => ({
   drawerItems: [
     {
       icon: 'mdi-apps',
-      title: 'Welcome',
+      title: 'Home',
       to: '/',
     },
     {
-      icon: 'mdi-chart-bubble',
-      title: 'Inspire',
-      to: '/inspire',
+      icon: 'mdi-account-plus',
+      title: 'Register',
+      to: '/register',
+    },
+    {
+      icon: 'mdi-account',
+      title: 'Login',
+      to: '/login',
+    },
+    {
+      icon: 'mdi-steering',
+      title: 'VIN Decoder',
+      to: '/vin-decoder',
     },
   ],
   rightDrawer: false,
