@@ -103,7 +103,7 @@ exports[`Layouts - default component matches snapshot 1`] = `
         <div
           class="v-toolbar__title text-center"
         >
-          ShaggyTech.com - VIN Decoder
+          Smart Foreman
         </div>
          
         <div
