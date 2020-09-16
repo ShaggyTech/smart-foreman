@@ -64,6 +64,9 @@ const config: NuxtConfig = {
       },
     ],
   },
+  router: {
+    middleware: ['auth'],
+  },
   /*
    ** Nuxt.js dev-modules
    */
@@ -76,12 +79,13 @@ const config: NuxtConfig = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
+  modules: ['@nuxtjs/auth-next', '@nuxtjs/axios', '@nuxtjs/pwa'],
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    // extractCSS: true,
     transpile: [
       '/typed-vuex/',
       'vee-validate/dist/rules',

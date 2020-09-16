@@ -1,13 +1,15 @@
 <script lang="ts">
-import { defineComponent, Ref } from '@vue/composition-api';
+import { defineComponent } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'PageLogin',
+  auth: false,
   setup() {
-    const login = (form: Record<string, Ref>): void =>
-      console.log(
-        `Email: ${form.email.value}, Password: ${form.password.value}`
-      );
+    const login = (): void => {};
+    // form: Record<string, Ref>
+    // console.log(
+    //   `Email: ${form.email.value}, Password: ${form.password.value}`
+    // );
 
     return { login };
   },

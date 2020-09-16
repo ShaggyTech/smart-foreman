@@ -1,7 +1,14 @@
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api';
+
+export default defineComponent({
+  auth: false,
+});
+</script>
+
 <template>
   <div class="container">
     <div>
-      <Logo />
       <h1 class="title">Smart Foreman - Shop Management</h1>
       <div class="links">
         <a
@@ -24,12 +31,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({});
-</script>
 
 <style>
 .container {
