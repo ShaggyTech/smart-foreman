@@ -5,6 +5,8 @@ import Vuetify from 'vuetify';
 import { rules } from '@/plugins/vee-validate';
 import '@testing-library/jest-dom';
 
+import 'regenerator-runtime/runtime';
+
 Vue.use(CompositionApi);
 Vue.use(Vuetify);
 
