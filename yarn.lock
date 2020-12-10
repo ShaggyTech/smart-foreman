@@ -1533,10 +1533,10 @@
     webpack-node-externals "^2.5.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/auth-next@5.0.0-1607534757.1122b76":
-  version "5.0.0-1607534757.1122b76"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/auth-next/-/auth-next-5.0.0-1607534757.1122b76.tgz#fcec800005acd3a5ee195e170d17ed8620a83c97"
-  integrity sha512-UnnQrMLLyAblF12y5fLWM4rIQVbSbTytxptNNEj+npwMRpPPBc0vF9sKytwG6xVKWGIVw2t7Lv7iuocr8si0bQ==
+"@nuxtjs/auth-next@5.0.0-1607600955.506103a":
+  version "5.0.0-1607600955.506103a"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/auth-next/-/auth-next-5.0.0-1607600955.506103a.tgz#96d8ab2b032fe19b47778bca0faf195611bd17fe"
+  integrity sha512-N7lvMEmqmpKVNc6DEjcdRANO7mIZ2LUdcV1sc1I4yxNVKiWCeVlxoyvQViqaKs2afGlSJD3/IJNvlzOsturxrg==
   dependencies:
     "@nuxtjs/axios" "5.12.1"
     body-parser "^1.19.0"
@@ -1961,10 +1961,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
   integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
 
-"@types/node@14.14.11":
-  version "14.14.11"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.11.tgz#fc25a4248a5e8d0837019b1d170146d07334abe0"
-  integrity sha512-BJ97wAUuU3NUiUCp44xzUFquQEvnk1wu7q4CMEUYKJWjdkr0YWYDsm4RFtAvxYsNjLsKcrFt6RvK8r+mnzMbEQ==
+"@types/node@14.14.12":
+  version "14.14.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.12.tgz#0b1d86f8c40141091285dea02e4940df73bba43f"
+  integrity sha512-ASH8OPHMNlkdjrEdmoILmzFfsJICvhBsFfAum4aKZ/9U4B6M6tTmTPh+f3ttWdD74CEGV5XvXWkbyfSdXaTd7g==
 
 "@types/node@^12.12.54":
   version "12.12.56"
