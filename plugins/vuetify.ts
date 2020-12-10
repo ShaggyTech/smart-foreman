@@ -1,6 +1,6 @@
 const vuetifyConfig = {
   // treeShake: true,
-  customVariables: ['~/assets/variables.scss'],
+  // customVariables: ['~/assets/variables.scss'],
   // defaultAssets: false,
   // icons: {
   //   iconfont: 'mdiSvg',

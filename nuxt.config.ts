@@ -31,7 +31,14 @@ const config: NuxtConfig = {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'prefetch',
+        as: 'font',
+        href: 'https://fonts.googleapis.com/css?family=Roboto',
+      },
+    ],
   },
   css: [],
   plugins: ['~/plugins/composition-api.ts', '~/plugins/vee-validate.ts'],
@@ -85,7 +92,7 @@ const config: NuxtConfig = {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    // extractCSS: true,
+    extractCSS: !isDev,
     transpile: [
       '/typed-vuex/',
       'vee-validate/dist/rules',
@@ -109,6 +116,8 @@ const config: NuxtConfig = {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
+    // customVariables: ['~/assets/variables.scss'],
+    defaultAssets: false,
     optionsPath: '~/plugins/vuetify.ts',
   },
 };
