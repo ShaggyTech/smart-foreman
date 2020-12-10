@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "2.0.0",
-    "@nuxtjs/auth-next": "5.0.0-1607534757.1122b76",
+    "@nuxtjs/auth-next": "5.0.0-1607600955.506103a",
     "@nuxtjs/axios": "5.12.3",
     "@nuxtjs/pwa": "3.3.2",
     "@shaggytools/nhtsa-api-wrapper": "1.1.6",
@@ -59,7 +59,7 @@
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/vue": "5.6.1",
     "@types/jest": "26.0.18",
-    "@types/node": "14.14.11",
+    "@types/node": "14.14.12",
     "@types/nuxtjs__auth": "4.8.5",
     "@vue/test-utils": "1.1.1",
     "babel-core": "7.0.0-bridge.0",
