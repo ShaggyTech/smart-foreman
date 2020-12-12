@@ -3,9 +3,10 @@ import { defineComponent } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'PageRegister',
+  auth: false,
   setup() {
-    const register = () => {};
-    // const register = (form: Record<string, Ref>): void =>
+    const register = (): void => {};
+    // form: Record<string, Ref>
     //   console.log(
     //     `Email: ${form.email.value}, Password: ${form.password.value}`
     //   );
