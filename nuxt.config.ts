@@ -1,6 +1,7 @@
 import { NuxtConfig } from '@nuxt/types';
+import { description, name } from './package.json';
 
-const name = 'Smart Foreman';
+const TITLE = 'Smart Foreman';
 const isDev = process.env.NODE_ENV !== 'production';
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
@@ -21,14 +22,14 @@ const config: NuxtConfig = {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: TITLE,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: description || '',
       },
     ],
     link: [
