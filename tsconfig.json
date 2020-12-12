@@ -15,10 +15,10 @@
     "types": [
       "@nuxt/types",
       "@nuxt/vue-app",
+      "@nuxtjs/auth-next",
       "@nuxtjs/vuetify",
       "@types/jest",
       "@types/node",
-      "@types/nuxtjs__auth"
     ],
 
     /* Strict Type-Checking Options */
