@@ -33,7 +33,7 @@ jobs:
           persist-credentials: false
 
     - name: Lint, Test, Build, Generate
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
